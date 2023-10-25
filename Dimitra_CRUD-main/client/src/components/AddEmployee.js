@@ -17,6 +17,8 @@ const AddEmployee = ({ getAllEmployees }) => {
       name: '',
       acronym: '',
     },
+    profession: '',
+    hours: '',
     address: '',
   });
 
@@ -86,6 +88,30 @@ const AddEmployee = ({ getAllEmployees }) => {
             onChange={(e) => handleInputChange(e, 'department.name')}
           />
         </Form.Group>
+        <Form.Group className="mb-1" controlId="formGroupProfession">
+          <Form.Label>Profession</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Add a profession"
+            onChange={(e) => handleInputChange(e, 'profession')}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-1" controlId="formGroupHours">
+          <Form.Label>Working hours</Form.Label>
+          <Form.Select onChange={(e) => handleInputChange(e, 'hours')}>
+            <option>Full-time</option>
+            <option>Part-time</option>
+          </Form.Select>
+
+          {/* <Form.Label>Working hours</Form.Label>
+          <Form.Control
+            type="select"
+            placeholder="Add working hours"
+            onChange={(e) => handleInputChange(e, 'hours')}
+          /> */}
+        </Form.Group>
+
         <Button type="submit" className="mt-2" onClick={addNewEmployee}>
           Add Employee
         </Button>
