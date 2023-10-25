@@ -20,6 +20,8 @@ function App() {
       name: '',
       acronym: '',
     },
+    profession: '',
+    hours: '',
     address: '',
   });
   function getAllEmployees() {
@@ -43,7 +45,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/signUp" element={<Register />} />
         <Route
           path="/employees"
           element={
