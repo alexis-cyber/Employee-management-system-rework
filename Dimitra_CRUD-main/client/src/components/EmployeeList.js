@@ -66,6 +66,25 @@ const EmployeeList = ({
     setCurrentEmploy(employee);
   }
 
+  function toggleStatus(id) {
+    try {
+      employees.map((employee) => {
+        if (id === employee._id) {
+          axios
+          .put(`http://localhost:8000/employees/${id}`, {...employee, workingStatus: employee.workingStatus==="active"?"inactive":"active"})
+          .then(() => {
+            getAllEmployees();
+          })
+          .catch((err) => console.log(err));
+        } else {
+          return;
+        }
+      })
+    } catch (err) {
+      console.log(err);
+    };
+  }
+
   function saveChanges() {
     try {
       console.log('this is the id', id);
@@ -84,25 +103,6 @@ const EmployeeList = ({
       console.log(error);
     }
     setIsEdit(false);
-  }
-
-  function toggleStatus(id) {
-    try {
-      employees.map((employee) => {
-        if (id === employee._id) {
-          axios
-          .put(`http://localhost:8000/employees/${id}`, {...employee, workingStatus: employee.workingStatus==="inactive"?"active":"inactive"})
-          .then(() => {
-            getAllEmployees();
-          })
-          .catch((err) => console.log(err));
-        } else {
-          return;
-        }
-      })
-    } catch (err) {
-      console.log(err);
-    };
   }
 
   return (
@@ -143,7 +143,7 @@ const EmployeeList = ({
                           {employees.map((employee) => (
                               <tr key={employee._id}>
                                   <td>{employee.serialNo}</td>
-                                  <td><input type="checkbox" checked onChange={() => toggleStatus(employee._id)}/></td>
+                                  <td><input type="checkbox" onChange={() => toggleStatus(employee.workingStatus._id)}/></td>
                                   <td>{employee.name}</td>
                                   <td>{employee._id}</td>
                                   <td>{employee.phone}</td>
@@ -151,7 +151,7 @@ const EmployeeList = ({
                                   <td>{employee.profession}</td>
                                   <td>{employee.hours}</td>
                                   <td>{employee.address}</td>
-                                  <td><a href={employee.cv} target="_blank"/>cv</td>
+                                  <td><a href={employee.cv} target="_blank" rel="noReferrer"/>cv</td>
                                   <td colSpan={2}>
                                       <Button
                                           variant="danger"

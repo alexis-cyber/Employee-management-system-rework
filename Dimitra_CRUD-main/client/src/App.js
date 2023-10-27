@@ -24,7 +24,7 @@ function App() {
     hours: '',
     address: '',
     cv: '',
-    workingStatus: '',
+    workingStatus: 'active',
   });
   function getAllEmployees() {
     try {
