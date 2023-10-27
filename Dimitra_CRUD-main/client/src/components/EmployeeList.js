@@ -19,6 +19,8 @@ const EmployeeList = ({
     address: '',
     profession: '',
     hours: '',
+    cv: '',
+    workingStatus: 'active',
   });
   const [currentEmploy, setCurrentEmploy] = useState({});
   const [id, setId] = useState(null);
@@ -84,6 +86,25 @@ const EmployeeList = ({
     setIsEdit(false);
   }
 
+  function toggleStatus(id) {
+    try {
+      employees.map((employee) => {
+        if (id === employee._id) {
+          axios
+          .put(`http://localhost:8000/employees/${id}`, {...employee, workingStatus: employee.workingStatus==="inactive"?"active":"inactive"})
+          .then(() => {
+            getAllEmployees();
+          })
+          .catch((err) => console.log(err));
+        } else {
+          return;
+        }
+      })
+    } catch (err) {
+      console.log(err);
+    };
+  }
+
   return (
       <div>
           {!isEdit ? (
@@ -106,13 +127,15 @@ const EmployeeList = ({
                       <thead>
                           <tr>
                               <th>S.NO</th>
+                              <th>ACTIVE</th>
                               <th>NAME</th>
                               <th>ID</th>
                               <th>PHONE</th>
                               <th>DEPARTMENT</th>
                               <th>PROFESSION</th>
-                              <th>WORKING HOURS</th>
+                              <th>HOURS</th>
                               <th>ADDRESS</th>
+                              <th>CV</th>
                               <th>ACTION</th>
                           </tr>
                       </thead>
@@ -120,6 +143,7 @@ const EmployeeList = ({
                           {employees.map((employee) => (
                               <tr key={employee._id}>
                                   <td>{employee.serialNo}</td>
+                                  <td><input type="checkbox" checked onChange={() => toggleStatus(employee._id)}/></td>
                                   <td>{employee.name}</td>
                                   <td>{employee._id}</td>
                                   <td>{employee.phone}</td>
@@ -127,6 +151,7 @@ const EmployeeList = ({
                                   <td>{employee.profession}</td>
                                   <td>{employee.hours}</td>
                                   <td>{employee.address}</td>
+                                  <td><a href={employee.cv} target="_blank"/>cv</td>
                                   <td colSpan={2}>
                                       <Button
                                           variant="danger"

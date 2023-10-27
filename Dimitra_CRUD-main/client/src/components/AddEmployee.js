@@ -10,6 +10,7 @@ const AddEmployee = ({ getAllEmployees }) => {
 
   const [employee, setEmployee] = useState({
     serialNo: '',
+    workingStatus: 'active',
     name: '',
     phone: '',
     status: 'false',
@@ -20,6 +21,7 @@ const AddEmployee = ({ getAllEmployees }) => {
     profession: '',
     hours: '',
     address: '',
+    cv: ''
   });
 
   const navigate = useNavigate();
@@ -100,16 +102,18 @@ const AddEmployee = ({ getAllEmployees }) => {
         <Form.Group className="mb-1" controlId="formGroupHours">
           <Form.Label>Working hours</Form.Label>
           <Form.Select onChange={(e) => handleInputChange(e, 'hours')}>
+            <option>-Choose an option-</option>
             <option>Full-time</option>
             <option>Part-time</option>
           </Form.Select>
+        </Form.Group>
 
-          {/* <Form.Label>Working hours</Form.Label>
+        <Form.Group className="mb-1" controlId="formGroupHours">
+          <Form.Label>CV</Form.Label><br/>
           <Form.Control
-            type="select"
-            placeholder="Add working hours"
-            onChange={(e) => handleInputChange(e, 'hours')}
-          /> */}
+            placeholder="Add a cv link"
+            onChange={(e) => handleInputChange(e, 'cv')}
+          />
         </Form.Group>
 
         <Button type="submit" className="mt-2" onClick={addNewEmployee}>

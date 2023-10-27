@@ -23,6 +23,8 @@ function App() {
     profession: '',
     hours: '',
     address: '',
+    cv: '',
+    workingStatus: '',
   });
   function getAllEmployees() {
     try {
