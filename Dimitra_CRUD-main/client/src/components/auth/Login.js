@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
+import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -14,24 +15,47 @@ const Login = () => {
 
   let navigate = useNavigate();
 
-  async function handleLogin(e) {
-    try {
-      e.preventDefault();
-      let res = await axios.post("http://localhost:8000/login", {
-          email,
-          password,
-      });
+//   async function handleLogin(e) {
+//     try {
+//       e.preventDefault();
+//       let res = await axios.post("http://localhost:8000/login", {
+//           email,
+//           password,
+//       });
 
-      // Save the token in the browser
-      if(res.status === 200) {
-        alert(res.data.msg);
-        localStorage.setItem("token", res.data.token);
-        navigate("/");
-      }
+//       // Save the token in the browser
+//       if(res.status === 200) {
+//         alert(res.data.msg);
+//         localStorage.setItem("token", res.data.token);
+//         navigate("/");
+//       }
       
+//     } catch (error) {
+//        alert("Can not login, please check your email or password.");
+//     }
+//   }
+
+
+async function handleLogin(e) {
+    try {
+        e.preventDefault();
+        let res = await axios.post("http://localhost:8000/login", {
+            email,
+            password,
+        });
+  
+        // Save the token in the browser
+        let token = res.data.token;
+        localStorage.setItem("token", res.data.token);
+
+        navigate("/");
+        
+        const decodedToken = jwt_decode(token);
+        console.log(decodedToken);  
     } catch (error) {
-       alert("Can not login, please check your email or password.");
+        alert("Can not login, please check your email or password.");    
     }
+
   }
 
   return (
@@ -71,7 +95,7 @@ const Login = () => {
                                   <Button variant="primary" type="submit">
                                       Login
                                   </Button>
-                                  <Link to="/signUp">Create new user</Link>
+                                  <Link to="/register">Create new user</Link>
                               </div>
                           </Form>
                       </Card.Body>
