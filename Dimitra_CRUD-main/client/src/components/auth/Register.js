@@ -13,14 +13,32 @@ const Register = () => {
 
    let navigate = useNavigate();
 
-   async function handleRegister(e) {
-    e.preventDefault();
+  //  async function handleRegister(e) {
+  //   e.preventDefault();
+  //   let res = await axios.post("http://localhost:8000/signUp", {
+  //     name, email, password,
+  //   });
+  //   alert(res.data.msg);
+  //   navigate("/login");
+  //  }
+
+  async function handleRegister(e) {
+    e.preventDefault(); // Prevent the default form submission 
+    try {
     let res = await axios.post("http://localhost:8000/signUp", {
       name, email, password,
     });
-    alert(res.data.msg);
-    navigate("/login");
-   }
+    // Save the received token in the browser's localStorage
+      localStorage.setItem("token", res.data.token);
+      navigate("/employee/create");
+      alert("User registered successfully");
+    } catch (error) {
+      console.log(error);
+      alert("Registration failed. Please try again");
+    }
+  }
+
+
 
   return (
     <Container className="mt-4">
