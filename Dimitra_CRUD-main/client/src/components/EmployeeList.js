@@ -1,16 +1,4 @@
-import React from 'react';
-import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
-import axios from 'axios';
-import { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-
-const EmployeeList = ({
-  employee,
-  getAllEmployees,
-  employees,
-  setEmployee,
-}) => {
+import React from 'react'; import Table from 'react-bootstrap/Table'; import Button from 'react-bootstrap/Button'; import axios from 'axios'; import { useState } from 'react'; import Form from 'react-bootstrap/Form'; const EmployeeList = ({ employee, getAllEmployees, employees, setEmployee, }) => {
   // States
   const [isEdit, setIsEdit] = useState(false);
   const [updatedValue, setUpdatedValue] = useState({
@@ -19,6 +7,8 @@ const EmployeeList = ({
     address: '',
     profession: '',
     hours: '',
+    cv: '',
+    workingStatus: 'active',
   });
   const [currentEmploy, setCurrentEmploy] = useState({});
   const [id, setId] = useState(null);
@@ -111,8 +101,9 @@ const EmployeeList = ({
                               <th>PHONE</th>
                               <th>DEPARTMENT</th>
                               <th>PROFESSION</th>
-                              <th>WORKING HOURS</th>
+                              <th>HOURS</th>
                               <th>ADDRESS</th>
+                              <th>CV</th>
                               <th>ACTION</th>
                           </tr>
                       </thead>
@@ -127,6 +118,7 @@ const EmployeeList = ({
                                   <td>{employee.profession}</td>
                                   <td>{employee.hours}</td>
                                   <td>{employee.address}</td>
+                                  <td><a href={employee.cv} target="_blank" rel="noReferrer">cv</a></td>
                                   <td colSpan={2}>
                                       <Button
                                           variant="danger"
