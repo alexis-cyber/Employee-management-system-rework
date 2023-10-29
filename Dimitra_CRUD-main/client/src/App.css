@@ -58,3 +58,34 @@ h1{
   text-decoration: none;
 }
 
+.logo {
+  width: 200px;
+  height: auto;
+  font-size: bold;
+  color: black;
+  font-weight: bold;
+}
+
+.Navbar {
+  font-weight: bold;
+  color: black;
+}
+
+.Sidebar {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .home,
+  .services,
+  .reports,
+  .contact,
+  .events,
+  .support {
+    display: flex;
+    margin-left: 260px;
+    font-size: 2rem;
+  }
+}
+
