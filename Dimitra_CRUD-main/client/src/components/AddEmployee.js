@@ -92,7 +92,7 @@ const AddEmployee = ({ getAllEmployees }) => {
         </Form.Group>
 
         <Form.Group className="mb-1" controlId="formGroupProfession">
-          <Form.Label>Profession</Form.Label>
+          <Form.Label style={{ fontWeight: 'bold', color:"black"  }}>Profession</Form.Label>
           <Form.Control
             type="text"
             placeholder="Add a profession"
@@ -101,7 +101,7 @@ const AddEmployee = ({ getAllEmployees }) => {
         </Form.Group>
 
         <Form.Group className="mb-1" controlId="formGroupHours">
-          <Form.Label>Working hours</Form.Label>
+          <Form.Label style={{ fontWeight: 'bold', color:"black"  }}>Working hours</Form.Label>
           <Form.Select onChange={(e) => handleInputChange(e, 'hours')}>
             <option>-Choose an option-</option>
             <option>Full-time</option>
@@ -110,7 +110,7 @@ const AddEmployee = ({ getAllEmployees }) => {
         </Form.Group>
 
         <Form.Group className="mb-1" controlId="formGroupHours">
-          <Form.Label>CV</Form.Label><br/>
+          <Form.Label style={{ fontWeight: 'bold', color:"black"  }}>CV</Form.Label><br/>
           <Form.Control
             placeholder="Add a cv link"
             onChange={(e) => handleInputChange(e, 'cv')}
