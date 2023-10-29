@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
+
 const EmployeeList = ({
   employee,
   getAllEmployees,
@@ -81,7 +82,7 @@ const EmployeeList = ({
   }
 
   return (
-      <div>
+      <div style={{ marginBottom: '100px' }}>
           {!isEdit ? (
               <div className="m-4">
                   <div className="text-center">
@@ -215,6 +216,7 @@ const EmployeeList = ({
                   </div>
               </div>
           )}
+
       </div>
   );
 };

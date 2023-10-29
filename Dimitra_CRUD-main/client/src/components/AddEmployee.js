@@ -47,7 +47,7 @@ const AddEmployee = ({ getAllEmployees }) => {
     <div className="mt-2 w-25">
       <Form>
         <Form.Group className="mb-1" controlId="formGroupName">
-          <Form.Label>Employee Name</Form.Label>
+          <Form.Label  style={{ fontWeight: 'bold', color:"black"  }}>Employee Name</Form.Label>
           <Form.Control
             type="text"
             placeholder="Add a name"
@@ -55,7 +55,7 @@ const AddEmployee = ({ getAllEmployees }) => {
           />
         </Form.Group>
         <Form.Group className="mb-1" controlId="formGroupSerialNo">
-          <Form.Label>SerialNo</Form.Label>
+          <Form.Label  style={{ fontWeight: 'bold', color:"black"  }}>SerialNo</Form.Label>
           <Form.Control
             type="number"
             placeholder="Add a SerialNo"
@@ -63,7 +63,7 @@ const AddEmployee = ({ getAllEmployees }) => {
           />
         </Form.Group>
         <Form.Group className="mb-1" controlId="formGroupPhone">
-          <Form.Label>Phone</Form.Label>
+          <Form.Label  style={{ fontWeight: 'bold', color:"black"  }}>Phone</Form.Label>
           <Form.Control
             type="phone"
             placeholder="Add a phone"
@@ -71,7 +71,7 @@ const AddEmployee = ({ getAllEmployees }) => {
           />
         </Form.Group>
         <Form.Group className="mb-1" controlId="formGroupAddress">
-          <Form.Label>Address</Form.Label>
+          <Form.Label  style={{ fontWeight: 'bold', color:"black"  }}>Address</Form.Label>
           <Form.Control
             type="text"
             placeholder="Add an address"
@@ -79,16 +79,17 @@ const AddEmployee = ({ getAllEmployees }) => {
           />
         </Form.Group>
         <Form.Group className="mb-1" controlId="formGroupDepartment">
-          <Form.Label>Department</Form.Label>
+          <Form.Label  style={{ fontWeight: 'bold', color:"black" }}>Department</Form.Label>
           <Form.Control
             type="text"
             placeholder="Add a department"
             onChange={(e) => handleInputChange(e, 'department.name')}
           />
         </Form.Group>
-        <Button type="submit" className="mt-2" onClick={addNewEmployee}>
+        <Button type="submit" className="mt-2" onClick={addNewEmployee} style={{ marginBottom: '20px' }}>
           Add Employee
         </Button>
+      
       </Form>
     </div>
   );
