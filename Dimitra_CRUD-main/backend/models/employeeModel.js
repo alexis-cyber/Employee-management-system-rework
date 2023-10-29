@@ -10,7 +10,11 @@ const employeeSchema = new mongoose.Schema ({
         name: String,
         acronym: String,
     },
+    profession: String,
+    hours: String,
     address: String,
+    cv: String,
+    workingStatus: String,
     author:{type:mongoose.Schema.Types.ObjectId, ref: "User"},
 });
 

@@ -33,7 +33,11 @@ function App() {
       name: '',
       acronym: '',
     },
+    profession: '',
+    hours: '',
     address: '',
+    cv: '',
+    workingStatus: 'active',
   });
   function getAllEmployees() {
     try {
@@ -69,7 +73,7 @@ function App() {
         <Route path='/support' element={<Support/>} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/signUp" element={<Register />} />
         <Route
           path="/employees"
           element={

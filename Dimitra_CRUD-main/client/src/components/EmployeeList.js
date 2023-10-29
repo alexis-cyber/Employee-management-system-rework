@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
@@ -18,6 +19,10 @@ const EmployeeList = ({
     name: '',
     phone: '',
     address: '',
+    profession: '',
+    hours: '',
+    cv: '',
+    workingStatus: 'active',
   });
   const [currentEmploy, setCurrentEmploy] = useState({});
   const [id, setId] = useState(null);
@@ -69,6 +74,8 @@ const EmployeeList = ({
       axios
         .put(`http://localhost:8000/${id}`, {
           name: updatedValue.name,
+        //   profession: updatedValue.profession,
+        //   hours: updatedValue.hours,
           phone: updatedValue.phone,
           address: updatedValue.address,
         })
@@ -107,7 +114,10 @@ const EmployeeList = ({
                               <th>ID</th>
                               <th>PHONE</th>
                               <th>DEPARTMENT</th>
+                              <th>PROFESSION</th>
+                              <th>HOURS</th>
                               <th>ADDRESS</th>
+                              <th>CV</th>
                               <th>ACTION</th>
                           </tr>
                       </thead>
@@ -119,7 +129,10 @@ const EmployeeList = ({
                                   <td>{employee._id}</td>
                                   <td>{employee.phone}</td>
                                   <td>{employee.department.name}</td>
+                                  <td>{employee.profession}</td>
+                                  <td>{employee.hours}</td>
                                   <td>{employee.address}</td>
+                                  <td><a href={employee.cv} target="_blank" rel="noReferrer">cv</a></td>
                                   <td colSpan={2}>
                                       <Button
                                           variant="danger"
@@ -167,6 +180,46 @@ const EmployeeList = ({
                               }
                           />
                       </Form.Group>
+                        {/* Part to update profession */}
+                      {/* <Form.Group className="m-2" controlId="formGroupName">
+                          <Form.Label>Profession</Form.Label>
+                          <Form.Control
+                              type="text"
+                              name="profession"
+                              // placeholder={currentEmploy.profession}
+                              placeholder="test"
+                              onChange={(e) => handleInputChange(e)}
+                              value={updatedValue.profession}
+                              onFocus={() =>
+                                  setCurrentEmploy({
+                                      ...currentEmploy,
+                                      profession: "",
+                                  })
+                              }
+                          />
+                      </Form.Group> */}
+
+
+
+                      {/* Part to update hours */}
+                      {/* <Form.Group className="m-2" controlId="formGroupName">
+                          <Form.Label>Working hours</Form.Label>
+                          <Form.Control
+                              type="number"
+                              name="hours"
+                              // placeholder={currentEmploy.hours}
+                              placeholder="test"
+                              onChange={(e) => handleInputChange(e)}
+                              value={updatedValue.hours}
+                              onFocus={() =>
+                                  setCurrentEmploy({
+                                      ...currentEmploy,
+                                      hours: "",
+                                  })
+                              }
+                          />
+                      </Form.Group> */}
+
                       <Form.Group className="m-2" controlId="formGroupName">
                           <Form.Label>Phone</Form.Label>
                           <Form.Control
