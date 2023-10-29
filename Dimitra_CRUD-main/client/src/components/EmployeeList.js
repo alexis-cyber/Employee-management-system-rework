@@ -1,4 +1,18 @@
-import React from 'react'; import Table from 'react-bootstrap/Table'; import Button from 'react-bootstrap/Button'; import axios from 'axios'; import { useState } from 'react'; import Form from 'react-bootstrap/Form'; const EmployeeList = ({ employee, getAllEmployees, employees, setEmployee, }) => {
+
+import React from 'react';
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import axios from 'axios';
+import { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+
+
+const EmployeeList = ({
+  employee,
+  getAllEmployees,
+  employees,
+  setEmployee,
+}) => {
   // States
   const [isEdit, setIsEdit] = useState(false);
   const [updatedValue, setUpdatedValue] = useState({
@@ -75,7 +89,7 @@ import React from 'react'; import Table from 'react-bootstrap/Table'; import But
   }
 
   return (
-      <div>
+      <div style={{ marginBottom: '100px' }}>
           {!isEdit ? (
               <div className="m-4">
                   <div className="text-center">
@@ -255,6 +269,7 @@ import React from 'react'; import Table from 'react-bootstrap/Table'; import But
                   </div>
               </div>
           )}
+
       </div>
   );
 };

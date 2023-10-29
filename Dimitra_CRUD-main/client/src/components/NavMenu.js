@@ -50,23 +50,30 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import logo from '../img/logo (2).png';
+import Sidebar from './Sidebar.css';
 import { FaHome, FaRegAddressCard } from 'react-icons/fa';
 import { RiInformationLine, RiLoginCircleLine } from 'react-icons/ri';
 import { Link } from "react-router-dom";
 
 const NavMenu = () => {
 
+
+  //Style for Navigation Menu Icons
   const iconsStyle = {
     // marginRight: "80px",
-    fontSize: "60px"
-
+    fontSize: "30px",
+    color: "black",
   };
 
+    //Style for the Texts
   const brandStyle = {
-    fontSize: "30px",
+    // display: "flex",
+    textAlign: "center",
+    fontSize: "25px",
     fontWeight: "bold",
-    color: "grey"
-
+    color: "black",
+    paddingLeft: "22%",
+  
   };
 
   let token = localStorage.getItem("token");
@@ -76,12 +83,12 @@ const NavMenu = () => {
 
   return (
     <>
-    { token ? (<Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    { token ? (<Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" style={{ height: '10%' }}>
       <Container fluid>
-        <Navbar.Brand style={brandStyle}>
-          <Image src={logo} width={'70px'} />
+        <Navbar.Brand style={{brandStyle, paddingRight: '20px', color: 'black'}}>
+          <Image src={logo} width={'50px'} />
         </Navbar.Brand>
-        <Navbar.Brand href="/" style={brandStyle}>Employee Management System</Navbar.Brand>
+        <Navbar.Brand href="/"className="centered-text" style={brandStyle}>Employee Management System</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="justify-content-end flex-grow-1 pe-3">
@@ -126,8 +133,6 @@ const NavMenu = () => {
       </Container>
     </Navbar>
     )};
-    
-    
     </>
   );
 };

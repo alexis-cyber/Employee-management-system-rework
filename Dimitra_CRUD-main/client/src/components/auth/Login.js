@@ -7,6 +7,7 @@ import { useState } from "react";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "../../components/Sidebar.css"
 
 const Login = () => {
 
@@ -58,8 +59,21 @@ async function handleLogin(e) {
 
   }
 
+  //Styling the Login Form
+  const loginStyle = {
+    margin: "100px",
+    paddingLeft: "59px",
+    borderRadius: "5px",
+    alignContent: "center",
+    fontWeight: "bold",
+    // backgroundColor: "antiquewhite",
+
+  
+  };
+
   return (
-      <Container className="mt-4">
+    <div className="login" >
+      <Container className="mt-4" style={loginStyle} >
           <Row>
               <Col md={{ span: 6, offset: 3 }} lg={{ span: 4, offset: 4 }}>
                   <Card>
@@ -92,9 +106,10 @@ async function handleLogin(e) {
                               </Form.Group>
 
                               <div>
-                                  <Button variant="primary" type="submit">
+                                  <Button variant="primary" type="submit" style={{ marginBottom: "10px" }} >
                                       Login
                                   </Button>
+                                  <br/>
                                   <Link to="/register">Create new user</Link>
                               </div>
                           </Form>
@@ -103,6 +118,7 @@ async function handleLogin(e) {
               </Col>
           </Row>
       </Container>
+      </div>
   );
 };
 
