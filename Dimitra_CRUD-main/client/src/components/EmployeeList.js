@@ -1,16 +1,4 @@
-import React from 'react';
-import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
-import axios from 'axios';
-import { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-
-const EmployeeList = ({
-  employee,
-  getAllEmployees,
-  employees,
-  setEmployee,
-}) => {
+import React from 'react'; import Table from 'react-bootstrap/Table'; import Button from 'react-bootstrap/Button'; import axios from 'axios'; import { useState } from 'react'; import Form from 'react-bootstrap/Form'; const EmployeeList = ({ employee, getAllEmployees, employees, setEmployee, }) => {
   // States
   const [isEdit, setIsEdit] = useState(false);
   const [updatedValue, setUpdatedValue] = useState({
@@ -66,25 +54,6 @@ const EmployeeList = ({
     setCurrentEmploy(employee);
   }
 
-  function toggleStatus(id) {
-    try {
-      employees.map((employee) => {
-        if (id === employee._id) {
-          axios
-          .put(`http://localhost:8000/employees/${id}`, {...employee, workingStatus: employee.workingStatus==="active"?"inactive":"active"})
-          .then(() => {
-            getAllEmployees();
-          })
-          .catch((err) => console.log(err));
-        } else {
-          return;
-        }
-      })
-    } catch (err) {
-      console.log(err);
-    };
-  }
-
   function saveChanges() {
     try {
       console.log('this is the id', id);
@@ -127,7 +96,6 @@ const EmployeeList = ({
                       <thead>
                           <tr>
                               <th>S.NO</th>
-                              <th>ACTIVE</th>
                               <th>NAME</th>
                               <th>ID</th>
                               <th>PHONE</th>
@@ -143,7 +111,6 @@ const EmployeeList = ({
                           {employees.map((employee) => (
                               <tr key={employee._id}>
                                   <td>{employee.serialNo}</td>
-                                  <td><input type="checkbox" onChange={() => toggleStatus(employee.workingStatus._id)}/></td>
                                   <td>{employee.name}</td>
                                   <td>{employee._id}</td>
                                   <td>{employee.phone}</td>
@@ -151,7 +118,7 @@ const EmployeeList = ({
                                   <td>{employee.profession}</td>
                                   <td>{employee.hours}</td>
                                   <td>{employee.address}</td>
-                                  <td><a href={employee.cv} target="_blank" rel="noReferrer"/>cv</td>
+                                  <td><a href={employee.cv} target="_blank" rel="noReferrer">cv</a></td>
                                   <td colSpan={2}>
                                       <Button
                                           variant="danger"
