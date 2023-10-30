@@ -3,7 +3,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
-
+ 
 
 // Data for the sidebar navigation
 export const SidebarData = [
@@ -13,7 +13,7 @@ export const SidebarData = [
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
-
+ 
 
 // Sub-navigation items for the "Services" section
     subNav: [
@@ -35,7 +35,7 @@ export const SidebarData = [
     icon: <IoIcons.IoIosPaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
-
+ 
     subNav: [
       {
         title: "Service 1",
@@ -65,10 +65,10 @@ export const SidebarData = [
     title: "Events",
     path: "/events",
     icon: <FaIcons.FaEnvelopeOpenText />,
-
+ 
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
-
+ 
 
   // Sub-navigation items for the "Events" section
     subNav: [
