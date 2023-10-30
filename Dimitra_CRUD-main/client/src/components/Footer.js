@@ -19,7 +19,6 @@ export default function Footer() {
     padding: "10px 0",
     backgroundColor: "black",
     fontSize: "15px"
-
   };
 
 
