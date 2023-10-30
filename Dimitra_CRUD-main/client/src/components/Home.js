@@ -8,7 +8,9 @@ const Home = () => {
   return (
     <div className="App">
       <NavMenu />
+      <a href="/employees">
       <Image src={imageHome} width={'660px'} className="mt-4" />
+      </a>
       {/* <h1>Employee Management System</h1> */}
       
     </div>
