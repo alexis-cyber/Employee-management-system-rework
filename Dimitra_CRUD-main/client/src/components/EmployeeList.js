@@ -97,7 +97,7 @@ import React from 'react'; import Table from 'react-bootstrap/Table'; import But
                           <tr>
                               <th>S.NO</th>
                               <th>NAME</th>
-                              <th>ID</th>
+                              <th>AGE</th>
                               <th>PHONE</th>
                               <th>DEPARTMENT</th>
                               <th>PROFESSION</th>
@@ -112,7 +112,7 @@ import React from 'react'; import Table from 'react-bootstrap/Table'; import But
                               <tr key={employee._id}>
                                   <td>{employee.serialNo}</td>
                                   <td>{employee.name}</td>
-                                  <td>{employee._id}</td>
+                                  <td>{employee.age}</td>
                                   <td>{employee.phone}</td>
                                   <td>{employee.department.name}</td>
                                   <td>{employee.profession}</td>

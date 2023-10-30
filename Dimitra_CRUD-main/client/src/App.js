@@ -16,6 +16,7 @@ function App() {
     name: '',
     phone: '',
     status: 'false',
+    age: '',
     department: {
       name: '',
       acronym: '',
