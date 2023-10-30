@@ -14,7 +14,6 @@ list-style: none;
 height: 60px;
 text-decoration: none;
 font-size: 18px;
-
 &:hover {
 	background: #252831;
 	border-left: 4px solid green;
@@ -39,7 +38,6 @@ align-items: center;
 text-decoration: none;
 color: #f5f5f5;
 font-size: 18px;
-
 &:hover {
 	background: green;
 	cursor: pointer;

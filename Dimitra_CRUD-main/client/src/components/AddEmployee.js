@@ -13,6 +13,7 @@ const AddEmployee = ({ getAllEmployees }) => {
     workingStatus: 'active',
     name: '',
     phone: '',
+    age: '',
     status: 'false',
     department: {
       name: '',
@@ -71,6 +72,14 @@ const AddEmployee = ({ getAllEmployees }) => {
           <Form.Control
             type="phone"
             placeholder="Add a phone"
+            onChange={(e) => handleInputChange(e, 'phone')}
+          />
+        </Form.Group>
+        <Form.Group className="mb-1" controlId="formGroupPhone">
+          <Form.Label>Phone</Form.Label>
+          <Form.Control
+            type="age"
+            placeholder="Add employee`s age"
             onChange={(e) => handleInputChange(e, 'phone')}
           />
         </Form.Group>

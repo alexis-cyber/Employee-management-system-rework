@@ -6,7 +6,7 @@ import * as AiIcons from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
- 
+
 
 // Styled component for the main navigation bar
 const Nav = styled.div`
@@ -16,7 +16,7 @@ const Nav = styled.div`
   justify-content: flex-start;
   align-items: center;
 `;
- 
+
 
 // Styled component for the navigation icon
 const NavIcon = styled(Link)`
@@ -27,7 +27,7 @@ const NavIcon = styled(Link)`
   justify-content: flex-start;
   align-items: center;
 `;
- 
+
 
 // Styled component for the sidebar navigation
 const SidebarNav = styled.nav`
@@ -42,18 +42,18 @@ const SidebarNav = styled.nav`
   transition: 350ms;
   z-index: 10;
 `;
- 
+
 
 // Styled component for the sidebar content
 const SidebarWrap = styled.div`
   width: 100%;
 `;
- 
+
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
- 
+
   const showSidebar = () => setSidebar(!sidebar);
- 
+
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
@@ -83,5 +83,5 @@ const Sidebar = () => {
     </>
   );
 };
- 
+
 export default Sidebar;

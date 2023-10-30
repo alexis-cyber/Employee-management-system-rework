@@ -111,7 +111,7 @@ const EmployeeList = ({
                           <tr>
                               <th>S.NO</th>
                               <th>NAME</th>
-                              <th>ID</th>
+                              <th>AGE</th>
                               <th>PHONE</th>
                               <th>DEPARTMENT</th>
                               <th>PROFESSION</th>
@@ -126,7 +126,7 @@ const EmployeeList = ({
                               <tr key={employee._id}>
                                   <td>{employee.serialNo}</td>
                                   <td>{employee.name}</td>
-                                  <td>{employee._id}</td>
+                                  <td>{employee.age}</td>
                                   <td>{employee.phone}</td>
                                   <td>{employee.department.name}</td>
                                   <td>{employee.profession}</td>

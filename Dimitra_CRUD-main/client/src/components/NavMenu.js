@@ -53,7 +53,6 @@ import logo from '../img/logo (2).png';
 import Sidebar from './Sidebar.css';
 import { FaHome, FaRegAddressCard } from 'react-icons/fa';
 import { RiInformationLine, RiLoginCircleLine } from 'react-icons/ri';
-import { Link } from "react-router-dom";
 
 const NavMenu = () => {
 

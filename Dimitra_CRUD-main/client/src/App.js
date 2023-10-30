@@ -1,5 +1,13 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './components/Home';
+import Information from './components/Information';
+import CreateEmployee from './components/CreateEmployee';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 import { AboutUs, OurAim, OurVision } from './pages/AboutUs';
 import{
   Services,
@@ -11,16 +19,7 @@ import { Events, EventsOne, EventsTwo } from './pages/Events';
 import Sidebar from './components/Sidebar';
 import Contact from './pages/ContactUs'
 import Support from './pages/Support';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './components/Home';
-import Information from './components/Information';
-import CreateEmployee from './components/CreateEmployee';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
 import Footer from './components/Footer';
-
 
 function App() {
   const [employees, setEmployees] = useState([]);
@@ -29,6 +28,7 @@ function App() {
     name: '',
     phone: '',
     status: 'false',
+    age: '',
     department: {
       name: '',
       acronym: '',
@@ -57,7 +57,7 @@ function App() {
   }, []);
   return (
     <BrowserRouter className="App">
-       <Sidebar/>
+      <Sidebar/>
       <Routes>
       <Route path='/about-us' element={<AboutUs/>} />
         <Route path='/about-us/aim' element={<OurAim/>} />
@@ -99,10 +99,7 @@ function App() {
       </Routes>
       <Footer/>
     </BrowserRouter>
-
   );
 }
 
 export default App;
-
-

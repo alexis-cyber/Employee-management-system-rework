@@ -5,6 +5,7 @@ const employeeSchema = new mongoose.Schema ({
     serialNo:Number,
     name: String,
     phone: Number,
+    age: Number,
     status: { type: Boolean, default: false },
     department: {
         name: String,
