@@ -6,11 +6,8 @@ Using this app you can crete an employee and add characteristics like the name, 
 
 There is also a table where you can see all the members of your company and also update their information or delete a member :magic_wand: .
 
-_for the installation part and all the dependencies please check the **pachage.json** file._
+_for the installation part and all the dependencies please check the **package.json** file._
 
-## Creators ##
-* Hamed Bahadori
-* Ilhan Karadag
-* Dimitra Giannouli
+
 
 
